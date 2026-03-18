@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Brand palette - Warm Cream/Orange */
+    --warm-brown: 0.22 0.04 55;
+    --warm-brown-mid: 0.35 0.05 55;
+    --warm-footer: 0.18 0.035 55;
+    --orange-brand: 0.65 0.185 50;
+    --orange-light: 0.72 0.175 55;
+    --cream: 0.98 0.015 80;
+    --cream-deep: 0.95 0.02 75;
+
+    /* Semantic tokens */
+    --background: 1 0 0;
+    --foreground: 0.22 0.04 55;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.04 55;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.04 55;
+    --primary: 0.65 0.185 50;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.98 0.015 80;
+    --secondary-foreground: 0.22 0.04 55;
+    --muted: 0.97 0.01 75;
+    --muted-foreground: 0.5 0.025 60;
+    --accent: 0.65 0.185 50;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.91 0.018 75;
+    --input: 0.91 0.018 75;
+    --ring: 0.65 0.185 50;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .bg-warm-brown {
+    background-color: oklch(var(--warm-brown));
+  }
+  .bg-warm-footer {
+    background-color: oklch(var(--warm-footer));
+  }
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+  .bg-cream-deep {
+    background-color: oklch(var(--cream-deep));
+  }
+  .text-warm-brown {
+    color: oklch(var(--warm-brown));
+  }
+  .text-warm-brown-mid {
+    color: oklch(var(--warm-brown-mid));
+  }
+  .text-brand-orange {
+    color: oklch(var(--orange-brand));
+  }
+  .bg-brand-orange {
+    background-color: oklch(var(--orange-brand));
+  }
+  .hover\:bg-brand-orange-light:hover {
+    background-color: oklch(var(--orange-light));
+  }
+  .border-brand-orange {
+    border-color: oklch(var(--orange-brand));
+  }
+  .ring-brand-orange {
+    --tw-ring-color: oklch(var(--orange-brand));
+  }
+  .section-fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .font-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+}
